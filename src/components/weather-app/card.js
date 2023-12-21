@@ -61,6 +61,7 @@ export default function Card({ lat, lon }) {
       case "pouring":
       case "moderate rain":
       case "light intensity drizzle rain":
+      case "light intensity drizzle":
       case "heavy intensity rain":
       case "scattered clouds":
       case "mist":

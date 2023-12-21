@@ -59,6 +59,12 @@ export default function Card({ lat, lon }) {
       case "clear sky":
         return isDay(new Date(convertUTCToLocal(new Date().getTime(), card.timezone))) ? '/sunnyDrops.svg' : '/rainyCloud.svg'
       case "pouring":
+      case "moderate rain":
+      case "light intensity drizzle rain":
+      case "heavy intensity rain":
+      case "scattered clouds":
+      case "mist":
+      case "few clouds":
       case "fog":
         return '/sunnyPouring.svg'
       default:
@@ -71,12 +77,11 @@ export default function Card({ lat, lon }) {
 
   return (
     <article style={{ backgroundImage: "url(/weather.svg)" }} className='bg-no-repeat bg-contain flex m-5 h-52'>
-      {/* {card.weather ? card.weather[0].description.toLowerCase() : null} */}
-      <div className='grow flex flex-col justify-center'>
+      <div className='grow pl-4 flex flex-col justify-center'>
         <span className='block text-6xl text-white font-bold'>{Math.round(card?.main?.temp - 273.15)}&deg;C</span>
         <span className='text-white/50'>H:{Math.round(card?.main?.temp_max - 273.15)}&deg; L:{Math.round(card?.main?.temp_min - 273.15)}&deg;</span>
         <h2 className='text-2xl text-white'>{card.name}</h2>
-        
+
       </div>
       <img src={weatherCondtionVisual()} alt={weatherCondtionVisual()} />
     </article>

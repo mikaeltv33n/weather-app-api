@@ -20,15 +20,17 @@ export default function Api() {
                 try {
                     const response = await fetch(endpoint);
                     const data = await response.json();
-
                     if (isMounted) {
                         setLocationAndWeather({
+                            temp_high : Math.round(data.list[0].main.temp_max - 273.15),
+                            temp_low  : Math.round(data.list[0].main.temp_min - 273.15),
                             city: data.city.name,
                             celsius: Math.round(data.list[0].main.temp - 273.15), // converts kelvin to celsius
-                            clouds: data.list[0].weather[0].description,
+                            clouds: data.list?.[0]?.weather?.[0]?.description,
                             height: data.city.coord.lat,
                             longitude: data.city.coord.lon
                         });
+                        console.log(data)
                     }
                 } catch (error) {
                     console.error('Error fetching data:', error);
@@ -38,18 +40,19 @@ export default function Api() {
                 console.error(`der skete en fejl: ${error.message}`);
             }
         );
-
         return () => {
             isMounted = false;
         };
     }, []);
 
-    console.log(locationAndWeather);
-
+    
     return (
         <LocationAndCurrentWeather
             city={locationAndWeather.city}
             degrees={locationAndWeather.celsius}
+            clouds={locationAndWeather.clouds}
+            temp_high={locationAndWeather.temp_high}
+            temp_low={locationAndWeather.temp_low}
         />
     );
 }

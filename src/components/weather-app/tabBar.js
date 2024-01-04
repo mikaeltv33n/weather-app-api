@@ -1,6 +1,6 @@
 "use client"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faList, faMapPin } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '../../../node_modules/@fortawesome/react-fontawesome'
+import { faList, faMapPin } from '../../../node_modules/@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 export default function TabBar(props) {
   return (

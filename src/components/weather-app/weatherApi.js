@@ -3,7 +3,7 @@ import LocationAndCurrentWeather from "./currentWeather";
 import { useState, useEffect } from "react";
 
 export default function Api() {
-    const apiKey = "371a743ceb6e25bf13659a362ab6c511";
+    const apiKey = process.env.NEXT_PUBLIC_API_KEY;
     const [locationAndWeather, setLocationAndWeather] = useState({});
 
     useEffect(() => {

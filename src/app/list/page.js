@@ -2,8 +2,8 @@
 import Link from 'next/link'
 import Card from '@/components/weather-app/card'
 import Api from '@/components/weather-app/weatherApi'
-import { faChevronLeft, faSearch, faEllipsis } from '../../../node_modules/@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '../../../node_modules/@fortawesome/react-fontawesome'
+import { faChevronLeft, faSearch, faEllipsis } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const CITIES= [

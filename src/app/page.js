@@ -16,7 +16,7 @@ export default function Front() {
                 {params.second}
                 <div className="flex grow justify-center flex-col">
                     <Api />
-                    <Image src={House} className="mt-6 " alt="" />
+                    <Image src={House} className=" mt-6 " priority alt="" />
 
                 </div>
                 <div className="menu-effect absolute backdrop-blur-md bottom-0 w-full max-h-[325px] rounded-t-[44px]">

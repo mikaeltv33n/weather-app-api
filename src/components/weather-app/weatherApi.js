@@ -14,9 +14,9 @@ export default function Api() {
             async (position) => {
                 let lat = position.coords.latitude;
                 let lon = position.coords.longitude;
-
-                const endpoint = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-
+                
+                const endpoint = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;  
+                
                 try {
                     const response = await fetch(endpoint);
                     const data = await response.json();

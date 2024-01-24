@@ -9,7 +9,7 @@ export default function TabBar(props) {
       <FontAwesomeIcon className='text-white flex-end' size='xl' icon={faMapPin} />
       <Link href='/list'>{props.second}<FontAwesomeIcon className='text-white self-center' size='xl' icon={faList} /></Link>
 
-
+    
 
 
 
